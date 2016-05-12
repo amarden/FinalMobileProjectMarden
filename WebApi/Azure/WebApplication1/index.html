@@ -1,0 +1,78 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title></title>
+	<meta charset="utf-8" />
+    <link rel="stylesheet" href="app/dist/app.min.css" />
+    <script src="app/dist/vendor.min.js"></script>
+    <script src="app/dist/app.min.js"></script>
+</head>
+<body ng-app="ehrDashboard" ng-controller="MainCtrl as mc">
+    <div layout="column" flex layout-fill>
+        <div layout="row" flex ng-show="!mc.processed">
+            Loading...
+        </div>
+        <div layout="row" flex layout-padding ng-show="mc.processed">
+            <div layout="column">
+                <div layout="column" class="metrics" flex>
+                    <md-subheader>Metrics</md-subheader>
+                    <div flex>
+                        <span class="metric-number">{{mc.processed.ageAverage}}</span>
+                        <span class="metric-title">Average Age</span>
+                    </div>
+                    <div flex>
+                        <span class="metric-number">{{mc.processed.chatAverage}}</span>
+                        <span class="metric-title">Average Chat Count Per Patient</span>
+                    </div>
+                    <div flex>
+                        <span class="metric-number" flex>{{mc.processed.providerAverage}}</span>
+                        <span class="metric-title">Average Provider Per Patient</span>
+                    </div>
+                    <div flex>
+                        <span class="metric-number">{{mc.processed.imageAverage}}</span>
+                        <span class="metric-title">Average Image Count By Type</span>
+                    </div>
+                    <div flex>
+                        <span class="metric-title">Top 3 Diagnoses</span>
+                        <div flex>
+                            <ul>
+                                <li ng-repeat="item in mc.processed.topDiagnoses | orderBy:'-number' | limitTo:'3'">
+                                    {{item.group}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    <div flex>
+                        <span class="metric-title">Top 3 Procedures</span>
+                        <div flex>
+                            <ul>
+                                <li ng-repeat="item in mc.processed.topProcedures | orderBy:'-number' | limitTo:'3'">
+                                    {{item.group}}
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="charts" flex layout="column">
+                <div layout="column" flex>
+                    <md-subheader>Provider Type - Count</md-subheader>
+                    <bar-chart flex data="mc.processed.roleCount" group="mc.groupDiag" unit="mc.unit"></bar-chart>
+                </div>
+                <div layout="column" flex>
+                    <md-subheader>Patient Status Mix - Count</md-subheader>
+                    <bar-chart flex data="mc.processed.statusCount" group="mc.groupDiag" unit="mc.unit"></bar-chart>
+                </div>
+                <div layout="column" flex>
+                    <md-subheader>Procedures - Count</md-subheader>
+                    <bar-chart flex data="mc.processed.topProcedures" group="mc.groupDiag" unit="mc.unit"></bar-chart>
+                </div>
+                <div layout="column" flex>
+                    <md-subheader>Diagnoses - Count</md-subheader>
+                    <bar-chart flex data="mc.processed.topDiagnoses" group="mc.groupDiag" unit="mc.unit"></bar-chart>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

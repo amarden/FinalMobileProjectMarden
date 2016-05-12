@@ -1,0 +1,80 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Azure.Controllers.AssignmentController">
+    <Position X="0.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAABAAAAAAAAQAAEAAEAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\AssignmentController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azure.Controllers.ChatController">
+    <Position X="4" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAABAAAAAAAAQCAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ChatController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azure.Controllers.LoginController">
+    <Position X="2.25" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAQAAAAAAAAAAAQAAAAAAAAEAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\LoginController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azure.Controllers.PatientController">
+    <Position X="7.5" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Class Name="Azure.Controllers.PatientController.PatientCreate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Controllers\PatientController.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Class>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAAAAAQQAAAAQAAAAAAQAAAAAAAAABCA=</HashCode>
+      <FileName>Controllers\PatientController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azure.Controllers.ProcedureCodeController">
+    <Position X="0.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAACAQAAJAAAAAAAAQAACAAEAAAAAAAAAgAAA=</HashCode>
+      <FileName>Controllers\ProcedureCodeController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Azure.Controllers.ProviderController">
+    <Position X="11" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAACAAAAACAQAABAAAAAAQAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\ProviderController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Controllers.DashboardController">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQCAAAAABAQAAAAAAAABAAAAQAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\DashboardController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Controllers.PatientImagingController">
+    <Position X="5.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AQAAAAAAADAQAAAAAAAAAAAQAAAAAAAAAAAAAAAgAAA=</HashCode>
+      <FileName>Controllers\PatientImagingController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="WebApplication1.Controllers.RegistrationController">
+    <Position X="9.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAASAQAAAAAAAAAAAQAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Controllers\RegistrationController.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

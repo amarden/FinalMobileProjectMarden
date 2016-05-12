@@ -1,0 +1,140 @@
+﻿<Page
+    x:Class="Client.PatientPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:Client"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <Grid Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="1*"></RowDefinition>
+            <RowDefinition Height="10*"></RowDefinition>
+        </Grid.RowDefinitions>
+        <ProgressBar Name="MyProgressBar" IsIndeterminate="False" VerticalAlignment="Bottom" HorizontalAlignment="Stretch" Background="Transparent"></ProgressBar>
+        <Grid Grid.Row="0" DataContext="{Binding User}" Background="LightBlue">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <TextBlock Grid.Column="0" Text="{Binding Name}" VerticalAlignment="Top" HorizontalAlignment="Center" Margin="20 0 0 0"></TextBlock>
+            <TextBlock Grid.Column="0" Text="{Binding Role}" VerticalAlignment="Bottom" HorizontalAlignment="Center" Margin="0 0 20 0"></TextBlock>
+            <Button Grid.Column="1" VerticalAlignment="Top" HorizontalAlignment="Right" Content="Back To Patient List" Tapped="backToPatients"></Button>
+        </Grid>
+        <Grid Grid.Row="1">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="1*"></ColumnDefinition>
+                <ColumnDefinition Width="2*"></ColumnDefinition>
+            </Grid.ColumnDefinitions>
+            <Grid Grid.Column="0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                </Grid.ColumnDefinitions>
+                <Grid Grid.Column="0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="Name: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="1" Text="Age: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="2" Text="Gender: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="3" Text="Admission Date: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="4" Text="Diagnosis: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="5" Text="Status: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock  Name="ProviderNumText" Grid.Row="6" Text="Providers: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock  Name="ProcedureNumText" Grid.Row="7" Text="Procedures: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock  Name="ChatNumText" Grid.Row="8" Text="Chat Activity: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock  Name="ImageNumText" Grid.Row="9" Text="Images: " VerticalAlignment="Center" Foreground="Gray" HorizontalAlignment="Right" Margin="5 0 0 0"></TextBlock>
+                    <Button Grid.Row="10"
+                            Name="DischargeBtn" Visibility="Collapsed"
+                            Tapped="discharge">Discharge Patient</Button>
+                </Grid>
+                <Grid Grid.Column="1"  DataContext="{Binding Patient}"  >
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                        <RowDefinition Height="1*"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <TextBlock Grid.Row="0" Text="{Binding Name}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="1" Text="{Binding Age}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="2" Text="{Binding Gender}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="3" Text="{Binding AdmitDate}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="4" Text="{Binding Diagnosis}"  TextWrapping="WrapWholeWords" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Grid.Row="5" Text="{Binding MedicalStatus}" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"></TextBlock>
+                    <TextBlock Name="ProviderNum" Grid.Row="6" Foreground="Blue" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0" Tapped="navToProviders">
+                        <Underline>
+                            <Run Text="{Binding ProviderNumber}"></Run>
+                        </Underline>
+                    </TextBlock>
+                    <TextBlock Name="ProcedureNum" Grid.Row="7" Foreground="Blue" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0" Tapped="navToProcedure">
+                        <Underline>
+                            <Run Text="{Binding ProcedureNumber}"></Run>
+                        </Underline>
+                    </TextBlock>
+                    <TextBlock Name="ChatNum" Grid.Row="8" Foreground="Blue" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0" Tapped="navToChat">
+                        <Underline>
+                            <Run Text="{Binding ChatActivityNumber}"></Run>
+                        </Underline>
+                    </TextBlock>
+                    <TextBlock Name="ImageNum" Grid.Row="9" Foreground="Blue" VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"  Tapped="navToImage">
+                        <Underline>
+                            <Run Text="{Binding ImageNumber}"></Run>
+                        </Underline>
+                    </TextBlock>
+                    <TextBlock Name="DischargeDateText" Grid.Row="10" Text="{Binding DischargeDate}" 
+                               VerticalAlignment="Center" HorizontalAlignment="Left" Margin="5 0 0 0"></TextBlock>
+                </Grid>
+            </Grid>
+            <Grid Grid.Column="1">
+                <Grid HorizontalAlignment="Center" Height="50" VerticalAlignment="Top" Width="{Binding ActualWidth, ElementName=BiometricList}">
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="1*"></ColumnDefinition>
+                        <ColumnDefinition Width="2*"></ColumnDefinition>
+                    </Grid.ColumnDefinitions>
+                    <TextBlock Margin="20,0,0,0" Grid.Column="0" Text="BP" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Margin="20,0,0,0" Grid.Column="1" Text="Glucose" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Margin="20,0,0,0" Grid.Column="2" Text="Oxygen" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                    <TextBlock Margin="20,0,0,0" Grid.Column="3" Text="Date" TextWrapping="Wrap" FontWeight="Bold" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                </Grid>
+                <ListView Grid.Column="1" Name="BiometricList" ScrollViewer.VerticalScrollMode="Auto" Margin="0 50 0 0">
+                    <ListView.ItemTemplate>
+                        <DataTemplate>
+                            <Grid HorizontalAlignment="Center" Height="150" Width="{Binding ActualWidth, ElementName=BiometricList}">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="1*"></ColumnDefinition>
+                                    <ColumnDefinition Width="2*"></ColumnDefinition>
+                                </Grid.ColumnDefinitions>
+                                <TextBlock Margin="20,0,0,0" Grid.Column="0" Text="{Binding BloodPressure}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Margin="20,0,0,0" Grid.Column="1" Text="{Binding Glucose}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Margin="20,0,0,0" Grid.Column="2" Text="{Binding OPercent}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                                <TextBlock Margin="20,0,0,0" Grid.Column="3" Text="{Binding MeasurementDate}" TextWrapping="Wrap" VerticalAlignment="Center" HorizontalAlignment="Left"></TextBlock>
+                            </Grid>
+                        </DataTemplate>
+                    </ListView.ItemTemplate>
+                </ListView>
+            </Grid>
+        </Grid>
+    </Grid>
+</Page>
