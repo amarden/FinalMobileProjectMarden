@@ -1,0 +1,33 @@
+{
+  "name": "case_management",
+  "description": "Case Management Tool for Social Work",
+  "main": "index.js",
+  "authors": [
+    "aaron marden"
+  ],
+  "license": "ISC",
+  "homepage": "https://github.com/amarden/CaseManagement",
+  "moduleType": [],
+  "private": true,
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "angular": "^1.5.0",
+    "angular-animate": "^1.5.0",
+    "angular-aria": "^1.5.0",
+    "angular-ui-router": "ui-router#~0.2.15",
+    "angular-material": "^1.0.6",
+    "moment": "^2.12.0",
+    "d3": "^3.5.16",
+    "underscore": "^1.8.3",
+    "d3-tip": "^0.6.7"
+  },
+  "resolutions": {
+    "d3": "^3.5.16"
+  }
+}
